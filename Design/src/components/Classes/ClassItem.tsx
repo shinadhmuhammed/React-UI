@@ -2,21 +2,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import Popup from "../Modal/Popup";
-
-type ClassItemProps = {
-  index: number;
-  classData: {
-    name: string;
-    date: string;
-    staffName: string;
-    staffImage: string;
-    action?: string;
-    countdown?: string;
-    daysLeft?: number;
-    isLive?: boolean;
-    isActive?: boolean;
-  };
-};
+import { ClassItemProps } from "./../../Types/ClassItemType";
 
 const ClassItem = ({ index, classData }: ClassItemProps) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -123,7 +109,7 @@ const ClassItem = ({ index, classData }: ClassItemProps) => {
           </div>
           {timer && (
             <div className="text-sm text-red-600 mt-2">
-              Timer: {Math.floor(timer / 60)}:{('0' + timer % 60).slice(-2)}
+              Timer: {Math.floor(timer / 60)}:{("0" + (timer % 60)).slice(-2)}
             </div>
           )}
         </td>

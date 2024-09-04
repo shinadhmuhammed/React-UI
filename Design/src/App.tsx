@@ -22,6 +22,7 @@ function App() {
       staffName: "Priya Sweety",
       staffImage: Priya,
       countdown: "2:40:34",
+      isActive:true
     },
     {
       name: "Design Hierarchy",
@@ -36,6 +37,7 @@ function App() {
       staffName: "Courtney Henry",
       staffImage: Henry,
       daysLeft: 3,
+      isActive:true
     },
     {
       name: "Graphic Designing",

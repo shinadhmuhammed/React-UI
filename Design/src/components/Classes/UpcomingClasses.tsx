@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import ClassItem from "./ClassItem";
 
@@ -10,10 +11,18 @@ type UpcomingClassesProps = {
     action?: string;
     countdown?: string;
     daysLeft?: number;
+    isLive?: boolean;
+    isActive?: boolean;
   }[];
 };
 
 const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
+  const [bookedOnly, setBookedOnly] = useState(false);
+
+  const filteredClasses = bookedOnly
+    ? classes.filter((classData) => classData.isActive || classData.isLive)
+    : classes;
+
   return (
     <Card className="max-w-3xl mx-auto mt-10">
       <CardHeader className="flex flex-col space-y-1.5">
@@ -29,6 +38,8 @@ const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
             <input
               type="checkbox"
               className="w-4 h-4 accent-blue-600 rounded border-blue-300 focus:ring-blue-500"
+              checked={bookedOnly}
+              onChange={()=>setBookedOnly(!bookedOnly)}
             />
           </div>
         </div>
@@ -43,7 +54,7 @@ const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
             </tr>
           </thead>
           <tbody>
-            {classes.map((classData, index) => (
+          {filteredClasses.map((classData, index) => (
               <ClassItem key={index} index={index} classData={classData} />
             ))}
           </tbody>

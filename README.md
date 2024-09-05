@@ -32,3 +32,30 @@ This repository contains a React-based "Upcoming Classes" component for a dashbo
 
 - **Book Now button:** Clicking this button opens a modal. Confirming the action starts a timer for the corresponding participant.
 
+## Testing
+
+Unit tests are written using Jest and React Testing Library.
+
+## Run Tests
+
+To run the tests, use the following command:
+
+```bash
+npm run test
+
+ ## Deployment
+
+The project can be easily deployed using Vercel or GitHub Pages.
+
+### Deploy on Vercel
+
+1. Push your code to a GitHub repository.
+
+2. Go to [Vercel](https://vercel.com/) and create a new project.
+
+3. Link your GitHub repository to the project.
+
+4. Vercel will automatically deploy the project and provide a live URL.
+
+
+

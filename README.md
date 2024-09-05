@@ -25,3 +25,10 @@ This repository contains a React-based "Upcoming Classes" component for a dashbo
    npm run dev
 
 6. Open your browser and navigate to http://localhost:5173/ to view the app.
+
+## Usage
+
+- **Booked only checkbox:** This checkbox filters the displayed participants to show only those who are currently live or have booked.
+
+- **Book Now button:** Clicking this button opens a modal. Confirming the action starts a timer for the corresponding participant.
+

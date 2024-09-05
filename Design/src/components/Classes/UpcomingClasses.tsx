@@ -5,15 +5,17 @@ import { UpcomingClassesProps } from "../../Types/UpcomingClassesType";
 import Pagination from "../Pagination/Pagination";
 
 const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
+  // State to manage the filter for booked only and manage the current page 
   const [bookedOnly, setBookedOnly] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [darkMode, setDarkMode] = useState(false);
   const itemsPerPage = 6;
-
+// Filter classes based on the bookedOnly state
   const filteredClasses = bookedOnly
     ? classes.filter((classData) => classData.isActive || classData.isLive)
     : classes;
 
+    //Calculating the total number of pages
   const totalPages = Math.ceil(filteredClasses.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentClasses = filteredClasses.slice(
@@ -21,6 +23,7 @@ const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
     startIndex + itemsPerPage
   );
 
+  // Function to handle page changes for pagination
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
@@ -33,6 +36,7 @@ const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
         darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
+       {/* Main card container with dynamic background color based on darkMode */}
       <Card
         className={`max-w-3xl mx-auto mt-10 ${
           darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
@@ -55,6 +59,7 @@ const UpcomingClasses = ({ classes }: UpcomingClassesProps) => {
                 onChange={() => setDarkMode(!darkMode)}
               />
             </div>
+              {/* Booked only filter toggle */}
             <div className="flex items-center space-x-2">
               <span className="font-semibold">Booked only</span>
               <input

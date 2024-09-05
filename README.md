@@ -38,10 +38,8 @@ Unit tests are written using Jest and React Testing Library.
 
 ## Run Tests
 
-To run the tests, use the following command:
+To run the tests, use the following command:npm run test
 
-```bash
-npm run test
 
  ## Deployment
 

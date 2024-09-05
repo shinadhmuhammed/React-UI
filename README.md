@@ -14,6 +14,14 @@ This repository contains a React-based "Upcoming Classes" component for a dashbo
    ```bash
    cd React-UI
 
-4.Install dependencies using npm install.
-5.Start the development server using npm run dev.
-6.Open your browser and navigate to http://localhost:5173/ to view the app.
+4. Install dependencies:
+
+   ```bash
+   npm install
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+
+6. Open your browser and navigate to http://localhost:5173/ to view the app.
